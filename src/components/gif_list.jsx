@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
 
+import Gif from './gif.jsx';
+
 class GifList extends Component {
 	render () {
-		const src = `https://media2.giphy.com/media/${this.props.id}/giphy.gif`;
 		return (
-			<img src={src} alt="" className="gif"/>
-		);
+			<div className="gif-list">
+			  {this.props.gifs.map(gif => {
+					return <Gif id={gif.id} key={gif.id}/>
+				})}
+			</div>
+		)
 	}
 }
 
